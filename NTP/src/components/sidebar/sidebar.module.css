@@ -1,0 +1,153 @@
+/* Sidebar CSS */
+.sidebar {
+  width: 350px;
+  height: calc(100vh - 150px);
+  position: fixed;
+  padding: 20px;
+  top: 150px; 
+  left: -400px;
+  background: #0f0c29;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */  
+  transition: left 0.3s ease; /* Smooth transition when opening and closing */
+  z-index: 1000; /* Ensure the sidebar is above other content */
+}
+  
+.sidebarOpen {
+  left: 0; /* Slide the sidebar in from the left when open */
+}
+
+.toggleButton {
+  background-color: #555;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  position: fixed;
+  top: 100px;
+  left: 10px;
+  z-index: 1000;
+}
+
+.toolTip {
+  visibility: hidden;
+  width: 180px;
+  background-color: #333;
+  color: transparent;
+  border-radius: 8px;
+  padding: 8px;
+  position: absolute;
+  z-index: 1;
+  bottom: -90%;
+  margin-left: 30px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  display: inline-block;
+}
+
+.toggleButton:hover .toolTip {
+  visibility: visible;
+  opacity: 1;
+  color: #fff;
+}
+
+.searchForm {
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+.searchInput {
+  width: 94%;
+  padding: 10px;
+  margin-bottom: 5px; /* Adjust margin for spacing */
+  border-radius: 5px;
+}
+
+.searchButton {
+  width: 100%;
+  background-color: #c1cbd6;
+  color: #222;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px; /* Added border-radius for consistency */
+}
+
+.packetDetails {
+  margin-top: 20px; /* Add margin to separate from search form */
+  padding: 10px; /* Add padding for spacing inside the details box */
+  border-radius: 5px; /* Add border-radius for better appearance */
+  background-color: #222; /* Add background color for better readability */
+  overflow-y: auto;
+  max-height: calc(100% - 150px); /* Adjust max height based on other elements' height */
+}
+
+.packetDetail {
+  margin-bottom: 10px; /* Add margin between packet details */
+}
+
+/* Media Queries for Mobile Compatibility */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    left: -100%;
+    height: calc(100vh - 100px);
+    top: 100px;
+    padding: 10px;
+  }
+
+  .toggleButton {
+    top: 60px;
+    left: 10px;
+  }
+
+  .toolTip {
+    bottom: -60%;
+    left: 10px;
+  }
+
+  .searchInput {
+    width: 90%;
+  }
+
+  .searchButton {
+    padding: 8px;
+  }
+
+  .packetDetails {
+    max-height: calc(100% - 120px);
+  }
+}
+
+@media (max-width: 576px) {
+  .sidebar {
+    width: 100%;
+    left: -100%;
+    height: calc(100vh - 80px);
+    top: 80px;
+    padding: 5px;
+  }
+
+  .toggleButton {
+    top: 50px;
+    left: 5px;
+    padding: 5px 10px;
+  }
+
+  .toolTip {
+    bottom: -50%;
+    left: 5px;
+  }
+
+  .searchInput {
+    width: 85%;
+  }
+
+  .searchButton {
+    padding: 6px;
+  }
+
+  .packetDetails {
+    max-height: calc(100% - 100px);
+  }
+}

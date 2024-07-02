@@ -1,0 +1,96 @@
+/* RightSideBar.module.css */
+.dropdown {
+  position: fixed;
+  top: 20px;
+  right: 10px;
+  display: inline-block;
+  z-index: 1000;
+}
+
+.dropdownContent {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 150px;
+  background-color: #0f0c29;
+  background: -webkit-linear-gradient(to top, #24243e, #302b63, #0f0c29);
+  background: linear-gradient(to top, #24243e, #302b63, #0f0c29);
+  min-width: 150px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  margin-top: 5px;
+}
+
+.dropdownContent .tab {
+  color: white;
+  padding: 8px 12px;
+  text-decoration: none;
+  display: block;
+  font-size: 14px;
+}
+
+.dropdownContent .tab:hover {
+  background-color: #575757;
+}
+
+.show {
+  display: block;
+}
+
+.toggleButton {
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  z-index: 1000;
+  position: fixed;
+  top:110px;
+  right: 10px;
+}
+
+.toolTip {
+  visibility: hidden;
+  width: 180px;
+  background-color: #333;
+  color: transparent;
+  border-radius: 8px;
+  padding: 8px;
+  position: absolute;
+  z-index: 100;
+  bottom: -90%;
+  margin-left: 30px;
+  opacity: 0;
+  transition: visibility 0.3s, opacity 0.3s;
+  display: inline-block;
+}
+
+.toggleButton:hover .toolTip {
+  visibility: visible;
+  opacity: 1;
+  color: #fff;
+}
+
+.packetDetails {
+  position: fixed;
+  top: 270px; /* Adjusted for some spacing from the top */
+  right: 2px;
+  width: 300px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #0f0c29;
+  background: -webkit-linear-gradient(to top, #24243e, #302b63, #0f0c29);
+  background: linear-gradient(to top, #24243e, #302b63, #0f0c29);
+  overflow-y: auto;
+  max-height: 400px; /* Adjusted to reduce height */
+  z-index: 1000;
+  display: none; /* Hide initially */
+}
+
+.packetDetails.show {
+  display: block;
+}
+
+.packetDetail {
+  margin-bottom: 10px;
+  color: white;
+}
