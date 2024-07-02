@@ -1,0 +1,7 @@
+services:
+  - name: csir-npl-react-frontend
+    env:
+      - key: NODE_ENV
+        value: production
+    buildCommand: npm run build
+    startCommand: npm install -g serve && serve -s build -l 3000
